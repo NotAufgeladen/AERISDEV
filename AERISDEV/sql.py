@@ -6,9 +6,21 @@ def dumpdb():
     print("WARNING: This will delete all .db files in the project root folder!")
     confirmation = input("Type 'DELETE' to confirm: ")
     if confirmation == 'DELETE':
-        project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        project_root = os.getcwd()
         for filename in os.listdir(project_root):
-            if filename.endswith('.db'):
+            file_endings = [
+  ".sql",
+  ".dump",
+  ".db",
+  ".sqlite",
+  ".sqlite3",
+  ".mdf",
+  ".ldf",
+  ".ndf",
+  ".bak"
+]
+# endings were kindly provided by chatgpt lol
+            if any(filename.endswith(ending) for ending in file_endings):
                 file_path = os.path.join(project_root, filename)
                 try:
                     os.remove(file_path)

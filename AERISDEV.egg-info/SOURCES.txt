@@ -1,0 +1,7 @@
+pyproject.toml
+AERISDEV/__init__.py
+AERISDEV/sql.py
+AERISDEV.egg-info/PKG-INFO
+AERISDEV.egg-info/SOURCES.txt
+AERISDEV.egg-info/dependency_links.txt
+AERISDEV.egg-info/top_level.txt
